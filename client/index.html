@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Drawing Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Real-Time Canvas (Phase 1: Local)</h1>
+
+    <div class="toolbar">
+        <div class="tool-section">
+            <label>Color:</label>
+            <div class="color-swatch active" data-color="#000000" style="background: #000;"></div>
+            <div class="color-swatch" data-color="#FF0000" style="background: #F00;"></div>
+            <div class="color-swatch" data-color="#00FF00" style="background: #0F0;"></div>
+            <div class="color-swatch" data-color="#0000FF" style="background: #00F;"></div>
+        </div>
+
+        <div class="tool-section">
+            <label for="strokeWidth">Width:</label>
+            <input type="range" id="strokeWidth" min="1" max="50" value="5">
+        </div>
+
+        <div class="tool-section">
+            <button id="brushBtn" class="tool-btn active">Brush</button>
+            <button id="eraserBtn" class="tool-btn">Eraser</button>
+        </div>
+        
+        <div class="tool-section">
+            <button id="undoBtn">Undo</button>
+            <button id="redoBtn">Redo</button>
+        </div>
+    </div>
+
+    <canvas id="drawingCanvas"></canvas>
+
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script src="websocket.js"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>
